@@ -32,6 +32,27 @@
 			};
 		};
 	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		power-led {
+			//linux,default-trigger = "heartbeat";
+			gpios = <&gpio 73 GPIO_ACTIVE_HIGH>;
+		};
+
+		rc-led {
+			//linux,default-trigger = "rc-feedback";
+			//linux,default-trigger = "heartbeat";
+			gpios = <&gpio_ao 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		net-led {
+			//linux,default-trigger = "heartbeat";
+			gpios = <&gpio_ao 5 GPIO_ACTIVE_HIGH>;
+		};
+
+	};
 };
 
 &cec_AO {
